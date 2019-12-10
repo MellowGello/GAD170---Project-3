@@ -12,12 +12,14 @@ using UnityEngine;
 public class BoomBoxItem : InteractiveItem
 {
     //TODO: you will need more data than this, like clips to play and a way to know which clip is playing
-    protected AudioSource audioSource;
-
+    public AudioSource audioSource;
+    public AudioClip sound;
+    public AudioClip[] clip;
+    int Counter = 0;
     protected override void Start()
     {
         base.Start();
-
+        audioSource.loop = true;
         //TODO; prep the boom box
     }
 
@@ -28,8 +30,16 @@ public class BoomBoxItem : InteractiveItem
 
     public override void OnUse()
     {
-        base.OnUse();
 
+        base.OnUse();
+        sound = clip[Counter];
+        audioSource.clip = sound;
+        audioSource.Play();
+        Counter++;
+        if(Counter >= clip.Length - 1)
+        {
+            Counter = 0;
+        }
         //TODO; this where we need to go to next track and start and stop playing
     }
 }
