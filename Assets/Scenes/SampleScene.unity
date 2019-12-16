@@ -37303,6 +37303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7352722953183618079, guid: 72e7f70b859192f4185dda6547ab91c4,
         type: 3}
+      propertyPath: clip.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352722953183618079, guid: 72e7f70b859192f4185dda6547ab91c4,
+        type: 3}
       propertyPath: sound
       value: 
       objectReference: {fileID: 8300000, guid: 99c1fbd8dd72d2a409dfb8ea6ea5337d, type: 3}
@@ -44103,6 +44108,12 @@ PrefabInstance:
       propertyPath: launchForce
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 7507332797684263902, guid: 556e9a1b9a473e74fb95eda66363fdfb,
+        type: 3}
+      propertyPath: usedSFX
+      value: 
+      objectReference: {fileID: 11400000, guid: e65f7cc15418f10478b6b7a3a66b31c6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 556e9a1b9a473e74fb95eda66363fdfb, type: 3}
 --- !u!4 &6804144950746362675 stripped
