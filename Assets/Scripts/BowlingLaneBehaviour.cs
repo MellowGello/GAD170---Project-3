@@ -16,6 +16,8 @@ public class BowlingLaneBehaviour : MonoBehaviour
     public GameObject bowlingBall;
     public Transform[] pinSpawnLocations;
     public Transform defaultBallLocation;
+    public GameObject newPin;
+    private int Score;
     
     //TODO; we need a way of tracking the pins that are used for scoring and so we can clean them up
 
@@ -27,7 +29,7 @@ public class BowlingLaneBehaviour : MonoBehaviour
         
         foreach (var pinLoc in pinSpawnLocations)
         {
-            var newPin = Instantiate(pinPrefab, pinLoc.position, pinLoc.rotation);
+            newPin = Instantiate(pinPrefab, pinLoc.position, pinLoc.rotation);
         }
         
     }
@@ -41,7 +43,16 @@ public class BowlingLaneBehaviour : MonoBehaviour
     [ContextMenu("TalleyScore")]
     public void TalleyScore()
     {
-      //TODO; determine score and get that information out to a checklist item, either via event or directly
+        Score = 0;
+        //TODO; determine score and get that information out to a checklist item, either via event or directly
+        for (int i = 0; i < pinSpawnLocations.Length; i++) 
+        {
+            if (newPin.transform.position.y != pinSpawnLocations[i].position.y)
+            {
+                Score++;
+            }
+        }
+        Debug.Log(Score);
     }
 
     [ContextMenu("ResetRack")]
